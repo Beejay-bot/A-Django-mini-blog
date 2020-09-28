@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% static "images" as baseUrl %}
+
+{% block title %}
+    {{blog.Title}}
+{% endblock %}
+
+{% block content %}
+
+   <a href="/"><-- Back to the home page.</a>
+   <br>
+   <br>
+
+    <div style="margin-left: 50px;">
+        <h2>{{blog.Title}}</h2>
+        <img src="{{blog.image.url}}" width="50%" alt="article_image">
+        <article>{{blog.body}}</article>
+    </div> 
+<style>
+    #welcome_text,
+    title {
+        color: blueviolet;
+        text-align: center;
+        text-decoration: underline;
+        font-weight: 100px;
+    }
+</style>
+{% endblock %}

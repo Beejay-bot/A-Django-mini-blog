@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% static "images" as baseUrl %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block content %}
+
+<h2 id="welcome_text">Welcome to the my blog.</h2>
+
+{% for post in article %}
+<div>
+    <h3><a href="{{post.get_absolute_url}}">{{post.Title}}</a></h3>
+    <p>{{post.summary}}</p>
+</div>
+{% endfor %}
+<p></p>
+
+<style>
+    #welcome_text,
+    title {
+        color: blueviolet;
+        text-align: center;
+        text-decoration: underline;
+        font-weight: 100px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+    }
+</style>
+{% endblock %}

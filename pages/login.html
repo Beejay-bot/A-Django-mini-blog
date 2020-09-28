@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <h1> Log in </h1>
+
+<form action="login" method="POST">
+    {% csrf_token %}
+    <input type="text" id='input' name="username" placeholder="Username">
+    <br>
+    <input type="password" id='input' name="password" placeholder="password">
+    <br>
+    
+    <input type="submit">
+    </form>
+
+</form>
+
+<style>
+
+    h1 {
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        margin-top: 50px;
+        color: burlywood;
+    }
+
+    #input{
+        background-color:burlywood;
+        margin-bottom: 30px;
+    }
+
+    form {
+        margin-top: 70px;
+        text-align: center;
+    }
+
+</style>
+{% endblock %}

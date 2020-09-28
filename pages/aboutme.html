@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% static "images" as baseUrl %}
+
+{% block title %}
+    About me |DishesByTowo
+{% endblock %}
+
+{% block content %}
+    <a href="/"><-- Back to the home page.</a>
+   <br>
+   <br>
+
+    <div style="margin-left: 50px;">
+        <h2>{{author.Title}}</h2>
+        <img src="{{author.image.url}}" width="50%" alt="article_image">
+        <h4> {{author.name}}</h4>
+        <article>{{author.body}}</article>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+</head>
+<body>
+    <nav style="background-color: aquamarine; text-align:center; height:100px;">
+        <ul >
+            {% if user.is_authenticated %}
+                <h4> Hello, {{user.username}}</h4>
+            {% endif %}
+            <a href="/">Home</a>
+            <a href="author/aboutAuthor">About me</a>
+            {% if user.is_authenticated %}
+            <a href="accounts/logout">Logout</a>
+            {% else %}
+            <a href="accounts/signup">Sign-Up</a>
+            <a href="accounts/login">Login</a>
+
+            {% endif %}
+
+        </ul>
+    </nav>
+    {% block content %}
+        Fallback text
+    {% endblock %}
+</body>
+</html>
